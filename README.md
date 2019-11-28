@@ -1,7 +1,7 @@
 # MP4MUSEUM
 MP4MUSEUM.org Media Player
 
-_ _ this is just being setup _ _ 
+this is just being setup...
 
 start.sh is run after boot and runs mp4museum.py
 
@@ -10,7 +10,7 @@ mp4museum.py contains the loop playback engine
 
 
 
-_ _ todo _ _ 
+__ todo __ 
 
 detect and use alsa usb sound cards
 
