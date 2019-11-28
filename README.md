@@ -10,7 +10,7 @@ mp4museum.py contains the loop playback engine
 
 
 
-__ todo __ 
+__todo__ 
 
 detect and use alsa usb sound cards
 
