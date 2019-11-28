@@ -19,4 +19,4 @@ motion sensor triggered playback
 behavior modifying by optional config file on usb drive
 
 
-__visit (mp4museum.org) for more information__
+__visit [mp4museum.org](http://mp4museum.org) for more information__
