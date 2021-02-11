@@ -1,8 +1,7 @@
 # MP4MUSEUM
 MP4MUSEUM.org Media Player
 
-start.sh is run after boot and runs mp4museum.py
-mp4museum.py contains the loop playback engine
+start.sh is run after boot and runs mp4museum.py, which contains the loop playback engine
 
 updated the code to v5beta2
 
