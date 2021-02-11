@@ -1,13 +1,12 @@
 # MP4MUSEUM
 MP4MUSEUM.org Media Player
 
-this is just being setup...
-
 start.sh is run after boot and runs mp4museum.py
-
 mp4museum.py contains the loop playback engine
 
+updated the code to v5beta2
 
+now using python-vlc to control playback
 
 
 __todo__ 
