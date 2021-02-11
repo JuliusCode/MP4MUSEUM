@@ -26,18 +26,24 @@ GPIO.add_event_detect(13, GPIO.FALLING, callback = buttonNext, bouncetime = 1234
 # play a video
 def video(source):
     vlc_instance = vlc.Instance()
-    
+    global player
     player = vlc_instance.media_player_new()
     media = vlc_instance.media_new(source)
     player.set_media(media)
     player.play()
+    time.sleep(1)
     current_state = player.get_state()
-    while current_state != 6:
-        time.sleep(.001)
+    while current_state == 3 or current_state == 4:
+        time.sleep(.1)
         current_state = player.get_state()
+    media.release()
+    player.release()
+
+# wait a bit
+time.sleep(7)
 
 # please do not remove my logo screen
-video("mp4museum.mp4")
+video("/home/pi/mp4museum5beta.mp4")
 
 # the loop
 while(1):
