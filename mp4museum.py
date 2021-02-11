@@ -19,10 +19,6 @@ def buttonPause(channel):
 def buttonNext(channel):
     player.stop()
 
-# add event listener
-GPIO.add_event_detect(11, GPIO.FALLING, callback = buttonPause, bouncetime = 234)
-GPIO.add_event_detect(13, GPIO.FALLING, callback = buttonNext, bouncetime = 1234)
-
 # play a video
 def video(source):
     vlc_instance = vlc.Instance()
@@ -39,11 +35,12 @@ def video(source):
     media.release()
     player.release()
 
-# wait a bit
-time.sleep(7)
-
 # please do not remove my logo screen
 video("/home/pi/mp4museum5beta.mp4")
+
+# add event listener
+GPIO.add_event_detect(11, GPIO.FALLING, callback = buttonPause, bouncetime = 234)
+GPIO.add_event_detect(13, GPIO.FALLING, callback = buttonNext, bouncetime = 1234)
 
 # the loop
 while(1):
