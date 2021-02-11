@@ -14,7 +14,7 @@ GPIO.setup(13, GPIO.IN, pull_up_down = GPIO.PUD_DOWN)
 
 # functions to be called by event listener
 def buttonPause(channel):
-    print("ah")
+    player.pause()
 
 def buttonNext(channel):
     player.stop()
