@@ -10,7 +10,7 @@ now using python-vlc to control playback
 
 __todo__ 
 
---detect and use alsa usb sound cards-- use alsa.txt on /boot partition
+detect and use alsa usb sound cards -> use alsa.txt on /boot partition
 
 motion sensor triggered playback
 
