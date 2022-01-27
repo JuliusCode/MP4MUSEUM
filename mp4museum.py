@@ -1,4 +1,6 @@
-# mp4museum v5 beta 3 - feb 2021
+# mp4museum v5 - jan 2022
+
+# (c) julius schmiedel - http://mp4museum.org
 
 import time, vlc, os, sys, glob
 
@@ -28,7 +30,10 @@ def buttonNext(channel):
 
 # play media
 def vlc_play(source):
-    vlc_instance = vlc.Instance('-q -A alsa --alsa-audio-device hw:' + audiodevice)
+    if("loop.mp4" in source):
+        vlc_instance = vlc.Instance('--input-repeat=999999999 -q -A alsa --alsa-audio-device hw:' + audiodevice)
+    else:
+        vlc_instance = vlc.Instance('-q -A alsa --alsa-audio-device hw:'+ audiodevice)
     global player
     player = vlc_instance.media_player_new()
     media = vlc_instance.media_new(source)
@@ -42,8 +47,13 @@ def vlc_play(source):
     media.release()
     player.release()
 
+# start player twice to make sure it is working
+# seems weird but works
+vlc_play("/home/pi/mp4museum-boot.mp4")
+vlc_play("/home/pi/mp4museum-boot.mp4")
+
 # please do not remove my logo screen
-vlc_play("/home/pi/mp4museum5beta.mp4")
+vlc_play("/home/pi/mp4museum.mp4")
 
 # add event listener
 GPIO.add_event_detect(11, GPIO.FALLING, callback = buttonPause, bouncetime = 234)
