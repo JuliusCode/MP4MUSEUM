@@ -5,6 +5,7 @@
 #
 # all files looped, GPIO triggered playback
 #
+# http://mp4museum.org/mp4museum-v4.20.img.zip
 # take a v4 image and replace its python script with this
 # does not work with v5 or newer!
 #
