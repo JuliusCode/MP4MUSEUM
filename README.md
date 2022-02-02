@@ -11,4 +11,4 @@ new things:
 
 __visit [mp4museum.org](http://mp4museum.org) for more information__
 
-or an answer may reside in the https://github.com/JuliusCode/MP4MUSEUM/issues?q=is%3Aissue+is%3Aclosed
+or an answer may reside in the [closed issues](https://github.com/JuliusCode/MP4MUSEUM/issues?q=is%3Aissue+is%3Aclosed)
