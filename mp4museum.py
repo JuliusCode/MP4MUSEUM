@@ -1,13 +1,9 @@
-# mp4museum v5 - jan 2022
+# mp4museum v5.5 - nov 2022
 
 # (c) julius schmiedel - http://mp4museum.org
 
-import time, vlc, os, sys, glob
-
-from subprocess import Popen, PIPE
+import time, vlc, os, glob
 import RPi.GPIO as GPIO
-
-FNULL = open(os.devnull, "w")
 
 # read audio device config
 audiodevice = "0"
@@ -22,15 +18,28 @@ GPIO.setup(11, GPIO.IN, pull_up_down = GPIO.PUD_DOWN)
 GPIO.setup(13, GPIO.IN, pull_up_down = GPIO.PUD_DOWN)
 
 # functions to be called by event listener
+# with code to filter interference / static discharges
 def buttonPause(channel):
-    player.pause()
+    inputfilter = 0
+    for x in range(0,200):
+        if GPIO.input(11):
+            inputfilter = inputfilter + 1
+        time.sleep(.001)
+    if (inputfilter > 50):
+        player.pause()
 
 def buttonNext(channel):
-    player.stop()
+    inputfilter = 0
+    for x in range(0,200):
+        if GPIO.input(13):
+            inputfilter = inputfilter + 1
+        time.sleep(.001)
+    if (inputfilter > 50):
+        player.stop()
 
 # play media
 def vlc_play(source):
-    if("loop.mp4" in source):
+    if(".loop." in source):
         vlc_instance = vlc.Instance('--input-repeat=999999999 -q -A alsa --alsa-audio-device hw:' + audiodevice)
     else:
         vlc_instance = vlc.Instance('-q -A alsa --alsa-audio-device hw:'+ audiodevice)
@@ -42,7 +51,7 @@ def vlc_play(source):
     time.sleep(1)
     current_state = player.get_state()
     while current_state == 3 or current_state == 4:
-        time.sleep(.1)
+        time.sleep(.01)
         current_state = player.get_state()
     media.release()
     player.release()
@@ -55,9 +64,9 @@ vlc_play("/home/pi/mp4museum-boot.mp4")
 # please do not remove my logo screen
 vlc_play("/home/pi/mp4museum.mp4")
 
-# add event listener
-GPIO.add_event_detect(11, GPIO.FALLING, callback = buttonPause, bouncetime = 234)
-GPIO.add_event_detect(13, GPIO.FALLING, callback = buttonNext, bouncetime = 1234)
+# add event listener which reacts to GPIO signal
+GPIO.add_event_detect(11, GPIO.RISING, callback = buttonPause, bouncetime = 234)
+GPIO.add_event_detect(13, GPIO.RISING, callback = buttonNext, bouncetime = 1234)
 
 # the loop
 while(1):
