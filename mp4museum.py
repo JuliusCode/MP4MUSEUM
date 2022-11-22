@@ -71,3 +71,4 @@ GPIO.add_event_detect(13, GPIO.RISING, callback = buttonNext, bouncetime = 1234)
 # the loop
 while(1):
     for files in sorted(glob.glob(r'/media/*/*.*')):
+        vlc_play(files)
