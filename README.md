@@ -13,7 +13,7 @@ _Or an answer may reside in the [closed issues](https://github.com/JuliusCode/MP
 
 
 
-For the script to run on a fresh raspbian lite you need to install some things
+For the script to run on a fresh [Raspberry Pi OS Lite](https://www.raspberrypi.com/software/operating-systems/) you need to install some things
 
 `sudo apt-get install vlc python3-pip`
 
