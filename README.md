@@ -17,5 +17,6 @@ _
 For the script to run on a fresh raspbian lite you need to install some things
 
 `sudo apt-get install vlc python3-pip
+
 pip3 install python-vlc RPi.GPIO
 `
