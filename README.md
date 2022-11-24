@@ -9,8 +9,7 @@ Version 5.5 is out!
 
 __visit [mp4museum.org](http://mp4museum.org) for more information__
 
-_Or an answer may reside in the [closed issues](https://github.com/JuliusCode/MP4MUSEUM/issues?q=is%3Aissue+is%3Aclosed)
-_
+_Or an answer may reside in the [closed issues](https://github.com/JuliusCode/MP4MUSEUM/issues?q=is%3Aissue+is%3Aclosed)_
 
 
 
