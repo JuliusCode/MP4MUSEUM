@@ -18,4 +18,3 @@ For the script to run on a fresh [Raspberry Pi OS Lite](https://www.raspberrypi.
 `sudo apt-get install vlc python3-pip`
 
 `pip3 install python-vlc RPi.GPIO`
-
