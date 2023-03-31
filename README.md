@@ -22,4 +22,5 @@ For the Python script to run on a fresh [Raspberry Pi OS Lite](https://www.raspb
 if you are using the distributed image, /etc/rc.local will run start.sh which will run mp4museum.py
 
 login via ssh user pi at mp4museum.local, password mp4museum
+
 local login: with no playback, press alt&F2 to get to the console
