@@ -1,10 +1,9 @@
 # MP4MUSEUM
 MP4MUSEUM.org Media Player
 
-Version 5.5 is out! 
+Version 6 is out! 
 
-- gpio input filter
-- new loop trigger
+- sync mode via omxplayer-sync
 
 
 __visit [mp4museum.org](http://mp4museum.org) for more information and a bootable image__ 
@@ -23,4 +22,4 @@ if you are using the distributed image, /etc/rc.local will run start.sh which wi
 
 login via ssh user pi at mp4museum.local, password mp4museum
 
-local login: with no playback, press alt&F2 to get to the console
+local login: press ctrl&C to get to the console
