@@ -18,6 +18,8 @@ For the Python script to run on a fresh [Raspberry Pi OS Lite](https://www.raspb
 
 `pip3 install python-vlc RPi.GPIO`
 
+omx-player sync needs to be installed for sync mode (it's here on github)
+
 if you are using the distributed image, .bashrc will run mp4museum.py
 
 login via ssh user pi at mp4museum.local, password mp4museum
