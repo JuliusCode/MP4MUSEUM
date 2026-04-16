@@ -1,7 +1,7 @@
 # MP4MUSEUM
 MP4MUSEUM.org Media Player
 
-Version 6 is out! 
+Version 6 updated 2026
 
 - sync mode via omxplayer-sync
 
