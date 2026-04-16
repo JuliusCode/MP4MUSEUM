@@ -1,4 +1,4 @@
-# mp4museum v6 unified - july 2023
+# mp4museum v6 unified refined - jan 2026
 
 # (c) julius schmiedel - http://mp4museum.org
 
@@ -92,13 +92,13 @@ GPIO.add_event_detect(13, GPIO.RISING, callback = buttonNext, bouncetime = 1234)
 enableSync = search_file("sync-leader.txt")
 syncFile = search_file("sync.mp4")
 if syncFile and enableSync:
-    print("Sync Mode LEADER:" + syncFile)
+    vlc_play("/home/pi/sync-leader.mp4")
     subprocess.run(["omxplayer-sync", "-u", "-m", syncFile]) 
 
 enableSync = search_file("sync-player.txt")
 syncFile = search_file("sync.mp4")
 if syncFile and enableSync:
-    print("Sync Mode PLAYER:" + syncFile)
+    vlc_play("/home/pi/sync-player.mp4")
     subprocess.run(["omxplayer-sync", "-u", "-l",  syncFile]) 
 
 # the loop
