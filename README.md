@@ -25,3 +25,7 @@ if you are using the distributed image, .bashrc will run mp4museum.py
 login via ssh user pi at mp4museum.local, password mp4museum
 
 local login: press ctrl&C to get to the console
+
+player is started via .bashrc
+
+change standard script or add new one and change startup
